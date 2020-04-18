@@ -16,9 +16,6 @@ public abstract class Empleado {
         this.puesto= puesto;
     }
 
-    public Empleado() {
-
-    }
 
     public String getNombre() {
         return nombre;
