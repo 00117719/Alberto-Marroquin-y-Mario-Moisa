@@ -5,12 +5,30 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    Scanner in= new Scanner(System.in);
 
     public static void main(String[] args) {
+        Scanner in= new Scanner(System.in);
         byte op1=0, op2=0;
+
+        do {
+            System.out.print("Que desea hacer?");
+            System.out.print("1.Agregar empleado");
+            System.out.print("2.Despedir empleado");
+            System.out.print("3.Ver lista de empleados");
+            System.out.print("4.Calcular sueldo");
+            System.out.println("5.Mostrar totales");
+            System.out.println("6.Salir");
+            op1=in.nextByte();in.nextLine();
+            switch(op1){
+                case 1:
+            }
+
+        }while(op1!=0);
+
 
 
 	// write your code here
     }
+
+
 }
