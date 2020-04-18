@@ -3,7 +3,9 @@ package com.AJMM.x00117719;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Empleado {
+public class Empleado {
+
+
     protected String nombre;
     protected String puesto;
     protected List<Documento> documentos= new ArrayList<>();
