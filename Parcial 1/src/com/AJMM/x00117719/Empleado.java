@@ -3,8 +3,7 @@ package com.AJMM.x00117719;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Empleado {
-
+public abstract class Empleado {
 
     protected String nombre;
     protected String puesto;
@@ -50,4 +49,13 @@ public class Empleado {
     }
 
 
+    @Override
+    public String toString() {
+        return "Empleado{" +
+                "documentos=" + documentos +
+                ", nombre='" + nombre + '\'' +
+                ", puesto='" + puesto + '\'' +
+                ", salario=" + salario +
+                '}';
+    }
 }
