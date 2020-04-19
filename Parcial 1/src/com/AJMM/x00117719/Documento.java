@@ -1,12 +1,12 @@
 package com.AJMM.x00117719;
 
-public class Documento  {
+public class Documento {
     private String nombre;
     private String numero;
 
     public Documento(String nombre, String numero) {
         this.nombre = nombre;
-        this.numero = numero;
+        this.numero= numero;
     }
 
     public String getNombre() {
@@ -16,6 +16,12 @@ public class Documento  {
     public String getNumero() {
         return numero;
     }
-    
-}
 
+    @Override
+    public String toString() {
+        return "Documento{" +
+                "nombre='" + nombre + '\'' +
+                ", numero='" + numero + '\'' +
+                '}';
+    }
+}
