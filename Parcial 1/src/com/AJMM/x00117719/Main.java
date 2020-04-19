@@ -9,6 +9,8 @@ public class Main {
     public static void main(String[] args) {
         Scanner in= new Scanner(System.in);
         byte op1=0, op2=0;
+        String empleadoNombre= "";
+
 
         do {
             System.out.print("Que desea hacer?");
@@ -21,6 +23,8 @@ public class Main {
             op1=in.nextByte();in.nextLine();
             switch(op1){
                 case 1:
+                    System.out.println("Nombre del empleado:"); empleadoNombre=in.nextLine();
+                    Empresa nuevoEmpleado= new Empresa(empleadoNombre);
             }
 
         }while(op1!=0);

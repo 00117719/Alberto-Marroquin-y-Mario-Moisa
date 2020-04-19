@@ -19,10 +19,10 @@ public class Empresa {
     public Empresa(List<Empleado> planilla) {
         this.planilla = planilla;
     }
-    public void addEmpleado(Empleado emp){
-
-
+    public void addEmpleado(Empleado empleado){
+        planilla.add(empleado);
     }
+
  public void quitEmpleado(String nombre){
 
  }

@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Empleado extends Exception {
+public abstract class Empleado  {
     Scanner in= new Scanner(System.in);
 
     protected String nombre;
@@ -13,10 +13,11 @@ public abstract class Empleado extends Exception {
     protected double salario;
 
 
-    public Empleado(String nombre,String puesto) {
+    public Empleado(String nombre,String puesto,double salario) {
         this.nombre = nombre;
         this.puesto= puesto;
         documentos= new ArrayList<>();
+        this.salario= salario;
     }
 
 
@@ -37,18 +38,9 @@ public abstract class Empleado extends Exception {
     public void addDocumento(Documento docu){
         documentos.add(docu);
     }
-    public void addDocumento(String nombre, Documento empleado) throws NotExistingDocumentException, SubDocumentException{
-        Documento empresa= null;
-        for(Documento a: documentos){
-            if(a.getNombre().equals(nombre)){
-                empresa=a;
-            }
-            if(empresa ==null)
-                throw new NotExistingDocumentException("El documento de ese empleado no existe");
-        }
-    }
-    public void removeDocumento(String doc){
 
+
+    public void removeDocumento(String doc){
 
 
     }
