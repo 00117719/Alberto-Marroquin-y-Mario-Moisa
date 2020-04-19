@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Empleado  {
-    Scanner in= new Scanner(System.in);
 
     protected String nombre;
     protected String puesto;
@@ -60,7 +59,6 @@ public abstract class Empleado  {
     public String toString() {
         return "Empleado{" +
                 "documentos=" + documentos +
-                ", in=" + in +
                 ", nombre='" + nombre + '\'' +
                 ", puesto='" + puesto + '\'' +
                 ", salario=" + salario +
