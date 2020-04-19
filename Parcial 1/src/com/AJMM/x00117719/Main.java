@@ -45,10 +45,7 @@ public class Main {
                     nombreDocumento = in.nextLine();
                     System.out.println("Numero del documento");
                     numero = in.nextLine();
-                    nuevaEmpresa.addEmpleado(new Empleado(nombre, puesto, salario) {
-
-                    });
-                    emp.addDocumento(new Documento(nombreDocumento, numero));
+                    
                     System.out.println("Tipo de empleado:\n1.Servicio profesional\n2.Plaza fija");
                     op2 = in.nextByte();
                     in.nextLine();
@@ -58,6 +55,10 @@ public class Main {
                             System.out.println("Meses contrato: ");
                             mesesContrato = in.nextInt();
                             in.nextLine();
+                            nuevaEmpresa.addEmpleado(new Empleado(nombre, puesto, salario) {
+
+                            });
+                            emp.addDocumento(new Documento(nombreDocumento, numero));
 
                             serv.add(new ServicioProfesional(nombre, puesto, salario, mesesContrato));
 
@@ -66,6 +67,11 @@ public class Main {
                             System.out.println("Extension: ");
                             extension = in.nextInt();
                             in.nextLine();
+
+                            nuevaEmpresa.addEmpleado(new Empleado(nombre, puesto, salario) {
+
+                            });
+                            emp.addDocumento(new Documento(nombreDocumento, numero));
                             plaza.add(new PlazaFija(nombre, puesto, salario, extension));
 
 
