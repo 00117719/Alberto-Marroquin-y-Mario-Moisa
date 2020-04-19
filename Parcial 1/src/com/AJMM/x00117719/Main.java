@@ -13,8 +13,15 @@ public class Main {
         String nombreEmpleado = "";
         String puesto = "";
         double salario = 0;
+        String nombreDocumento="";
+        String numero= "";
+        List<Documento> documentos= new ArrayList<>();
+
 
         Empresa nuevaEmpresa= new Empresa(nombre);
+        Empleado emp= (new Empleado(nombre,puesto,salario){
+        });
+
 
         do {
             System.out.println("Que desea hacer?\n1.Agregar empleado\n2.Despedir empleado\n3.Ver lista de empleados\n4.Calcular sueldo\n5.Mostrar totales\n6.Salir");
@@ -29,8 +36,16 @@ public class Main {
                     puesto = in.nextLine();
                     System.out.print("Salario: ");
                     salario = in.nextDouble();in.nextLine();
+                    System.out.println("Nombre del documento:");
+                    nombreDocumento=in.nextLine();
+                    System.out.println("Numero del documento");
+                    numero=in.nextLine();
                     nuevaEmpresa.addEmpleado(new Empleado(nombre,puesto,salario){
+
                     });
+                    emp.addDocumento(new Documento(nombreDocumento,numero));
+
+
                     break;
 
                 case 2:
@@ -38,6 +53,8 @@ public class Main {
 
                 case 3:
                     System.out.println(nuevaEmpresa.showEmpleados());
+                    System.out.println(emp.showDocumento());
+
                     break;
 
                 case 0:return;

@@ -34,12 +34,20 @@ public abstract class Empleado  {
     }
 
 
-    public void addDocumento(Documento docu){
+    public void addDocumento(Documento docu)
+    {
+
         documentos.add(docu);
+
     }
 
-
-    public void removeDocumento(String doc){
+    public String showDocumento(){
+        String mensaje= "";
+        for(Documento documento:documentos)
+            mensaje+=documento.toString() + "\n";
+        return mensaje;
+    }
+    public void removeDocumento(String nombre){
 
 
     }
@@ -58,8 +66,7 @@ public abstract class Empleado  {
     @Override
     public String toString() {
         return "Empleado{" +
-                "documentos=" + documentos +
-                ", nombre='" + nombre + '\'' +
+                " nombre='" + nombre + '\'' +
                 ", puesto='" + puesto + '\'' +
                 ", salario=" + salario +
                 '}';

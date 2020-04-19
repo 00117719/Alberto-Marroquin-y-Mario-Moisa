@@ -31,6 +31,7 @@ public class Empresa {
         return mensaje;
     }
 
+
  public void quitEmpleado(String nombre){
 
  }
