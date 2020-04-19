@@ -8,7 +8,7 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        byte op1 = 0, op2 = 0, op3=0;
+        byte op1 = 0, op2 = 0;
         String nombre="";
         String puesto="";
         double salario= 0;
