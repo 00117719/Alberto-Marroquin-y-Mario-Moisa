@@ -34,7 +34,8 @@ public class Empresa {
     }
 
 
- public void quitEmpleado(String nombre){
+ public void quitEmpleado(Empleado empleado){
+     planilla.remove(empleado);
 
  }
 

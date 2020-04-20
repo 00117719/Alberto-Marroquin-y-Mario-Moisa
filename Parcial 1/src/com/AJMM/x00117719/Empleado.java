@@ -47,8 +47,8 @@ public abstract class Empleado  {
             mensaje+=documento.toString() + "\n";
         return mensaje;
     }
-    public void removeDocumento(String nombre){
-
+    public void removeDocumento(Documento document){
+       documentos.remove(document);
 
     }
 
