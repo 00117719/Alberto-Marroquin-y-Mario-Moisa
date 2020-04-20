@@ -13,21 +13,26 @@ public final class CalculadoraImpuestos {
 
 
 
-
-
-     public double calcularPago (Empleado empleado){
+     public double calcularPago (Empleado empleado) {
          if (empleado.getSalario() >= 472.01)
-             if (empleado instanceof ServicioProfesional) totalRenta = empleado.getSalario() * 0.1;
+             if (empleado instanceof ServicioProfesional)
+                 totalRenta = empleado.getSalario() * 0.1;
          double sueldo = empleado.getSalario() - totalRenta;
 
-         return ++sueldo;
-     }
+         if (empleado.getSalario() >= 472.01)
+             if (empleado instanceof PlazaFija)
+                 totalRenta = empleado.getSalario() * 0.1;
+         double sueldo1 = empleado.getSalario() - totalRenta;
+         totalAFP = 0.0625 * empleado.getSalario();
+         totalISS = empleado.getSalario() * 0.03;
 
+         return sueldo;
+
+     }
      public String mostrarTotales () {
          String total ="";
-         for(CalculadoraImpuestos cal: plan)
-          total+=cal.toString();
-         return total;
+         plan.forEach(obj-> System.out.println(obj.toString()));
+         return  total;
      }
 
      @Override
@@ -39,6 +44,6 @@ public final class CalculadoraImpuestos {
                  '}';
      }
 
-     
+
 
 }

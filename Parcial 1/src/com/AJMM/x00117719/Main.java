@@ -8,32 +8,32 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        byte op1 = 0, op2 = 0, op3=0;
-        String nombre="";
-        String puesto="";
-        double salario= 0;
-        String nombreDocumento="";
-        String numero= "";
-        int mesesContrato= 0;
-        int extension=0;
-        String nombreDocumento1="";
-        double sueldo=0;
-        double totalRenta=0;
-        double totalAAFP=0;
-        double totalISS=0;
+        byte op1 = 0, op2 = 0, op3 = 0;
+        String nombre = "";
+        String puesto = "";
+        double salario = 0;
+        String nombreDocumento = "";
+        String numero = "";
+        int mesesContrato = 0;
+        int extension = 0;
+        String nombreDocumento1 = "";
+        double sueldo = 0;
+        double totalRenta = 0;
+        double totalAAFP = 0;
+        double totalISS = 0;
 
 
+        List<Empleado> emplea = new ArrayList<>();
+        List<Documento> docu = new ArrayList<>();
+        CalculadoraImpuestos calculadoraImpuestos = new CalculadoraImpuestos();
 
-        List<Empleado> emplea= new ArrayList<>();
-        List<Documento> docu= new ArrayList<>();
-        CalculadoraImpuestos calculadoraImpuestos= new CalculadoraImpuestos();
-
-        Empresa nuevaEmpresa= new Empresa(nombre);
-        Empleado emp= (new Empleado(nombre,puesto,salario) {
+        Empresa nuevaEmpresa = new Empresa(nombre);
+        Empleado emp = (new Empleado(nombre, puesto, salario) {
         });
         do {
             System.out.println("Que desea hacer?\n1.Agregar empleado\n2.Despedir empleado\n3.Ver lista de empleados\n4.Calcular sueldo\n5.Mostrar totales\n6.Salir");
-            op1 = in.nextByte();in.nextLine();
+            op1 = in.nextByte();
+            in.nextLine();
 
             switch (op1) {
 
@@ -62,8 +62,8 @@ public class Main {
                             nuevaEmpresa.addEmpleado(new Empleado(nombre, puesto, salario) {
 
                             });
-                            emp.addDocumento(new Documento(nombreDocumento,numero));
-                            emplea.add(new ServicioProfesional(nombre,puesto,salario,mesesContrato));
+                            emp.addDocumento(new Documento(nombreDocumento, numero));
+                            emplea.add(new ServicioProfesional(nombre, puesto, salario, mesesContrato));
 
                             break;
                         case 2:
@@ -74,7 +74,7 @@ public class Main {
                             nuevaEmpresa.addEmpleado(new Empleado(nombre, puesto, salario) {
 
                             });
-                            emp.addDocumento(new Documento(nombreDocumento,numero));
+                            emp.addDocumento(new Documento(nombreDocumento, numero));
                             emplea.add(new PlazaFija(nombre, puesto, salario, extension));
 
 
@@ -88,19 +88,20 @@ public class Main {
 
                 case 2:
                     System.out.println("De cual clase desea eliminar un empleado?\n1.Servicio profesional\n2.Plaza fija");
-                    op3=in.nextByte();in.nextLine();
-                    switch(op3) {
+                    op3 = in.nextByte();
+                    in.nextLine();
+                    switch (op3) {
                         case 1:
                             System.out.println("Despidiendo empleado servicio profesional....");
-                            docu.removeIf(obj->obj instanceof Documento);
-                            emplea.removeIf(obj->obj instanceof ServicioProfesional);
+                            docu.removeIf(obj -> obj instanceof Documento);
+                            emplea.removeIf(obj -> obj instanceof ServicioProfesional);
 
 
                             break;
 
                         case 2:
                             System.out.println("Despidiendo empleado plaza fija....");
-                            emplea.removeIf(obj-> obj instanceof PlazaFija);
+                            emplea.removeIf(obj -> obj instanceof PlazaFija);
 
 
                             break;
@@ -112,22 +113,31 @@ public class Main {
                     System.out.println("Los empleados agregados actualmente son:");
                     System.out.println(nuevaEmpresa.showEmpleados());
                     System.out.println(emp.showDocumento());
-                    emplea.forEach(obj-> System.out.println(obj.toString()));
+                    emplea.forEach(obj -> System.out.println(obj.toString()));
+                    break;
 
-                case 4: calculadoraImpuestos.calcularPago(new Empleado(nombre,puesto,salario) {
-                });
+                case 4:
+                    System.out.println(calculadoraImpuestos.calcularPago(new Empleado(nombre, puesto, salario) {
+                    }));
+                    break;
+
                 case 5:
                     System.out.println(calculadoraImpuestos.mostrarTotales());
+                    break;
 
+                case 6: return;
 
-
+                default:
+                    System.out.println("Opcion incorrecta");
 
 
             }
-            } while (op1 != 0);
+
+
+        } while (op1 != 0);
 
         // write your code here
+
+
     }
-
-
 }
